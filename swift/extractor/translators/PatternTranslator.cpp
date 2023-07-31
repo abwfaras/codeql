@@ -59,7 +59,7 @@ codeql::IsPattern PatternTranslator::translateIsPattern(const swift::IsPattern& 
 
 codeql::ExprPattern PatternTranslator::translateExprPattern(const swift::ExprPattern& pattern) {
   auto entry = dispatcher.createEntry(pattern);
-  entry.sub_expr = dispatcher.fetchLabel(pattern.getSubExpr());
+  entry.sub_expr = dispatcher.fetchLabel(pattern.getMatchExpr());
   return entry;
 }
 
